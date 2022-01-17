@@ -1,0 +1,66 @@
+
+
+.pcrypto{
+
+  height: 60px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-left: 20px;
+  padding-right: 20px;
+  border-bottom: 1px solid #dfe1e5;
+  border-radius: 3px;
+
+}
+
+.pcrypto:last-of-type{
+  border-bottom: none;
+}
+
+.pcrypto:hover{
+  cursor: pointer;
+  background-color: #ededed;
+}
+
+.pcrypto_name{
+  width: 30%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.pcrypto_icon{
+  height: 24px;
+  width: 24px;
+  margin-right: 10px;
+}
+
+.pcrypto_name_name{
+  margin-right: 10%;
+}
+
+.pcrypto_id{
+  font-weight: bold;
+  color: gray;
+}
+
+.pcrypto_data{
+  width: 70%;
+  display: flex;
+}
+
+.pcrypto_data p{
+  width: 33.33%;
+  text-align: center;
+}
+
+#pcrypto_heart_icon{
+  color: red;
+  margin-left: 20px;
+}
+
+#pcrypto_heart_icon:hover{
+  cursor: pointer;
+  color: gray;
+}

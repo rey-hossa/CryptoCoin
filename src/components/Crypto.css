@@ -1,0 +1,70 @@
+
+
+.crypto{
+
+  height: 60px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-left: 20px;
+  padding-right: 20px;
+  border-bottom: 1px solid #dfe1e5;
+  border-radius: 3px;
+
+}
+
+.crypto:last-of-type{
+  border-bottom: none;
+}
+
+.crypto:hover{
+  cursor: pointer;
+  background-color: #ededed;
+}
+
+.crypto_name{
+  height: 100%;
+  width: 30%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.crypto_icon{
+  height: 24px;
+  width: 24px;
+  margin-right: 10px;
+}
+
+.name{
+  margin-right: 10%;
+}
+
+.id{
+  font-weight: bold;
+  color: gray;
+}
+
+.crypto_data{
+  height: 100%;
+  width: 70%;
+  display: flex;
+  align-items: center;
+}
+
+.crypto_data p{
+  width: 33.33%;
+  text-align: center;
+}
+
+#heart_icon{
+  color: lightgray;
+  margin-left: 20px;
+}
+
+#heart_icon:hover{
+  cursor: pointer;
+  color: gray;
+}

@@ -1,0 +1,67 @@
+
+.allcrypto{
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+
+  border-radius: 3px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.allcrypto_container{
+  width: 100%;
+  padding: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.description{
+  width: 100%;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-bottom: 1px solid #dfe1e5;
+
+  display: flex;
+  align-items: center;
+  height: 80px;
+
+  font-weight: bold;
+}
+
+.description_name{
+  width: 30%;
+}
+
+.description_data{
+  width: 70%;
+  display: flex;
+}
+
+.description_data p{
+  width: 33.33%;
+  text-align: center;
+}
+
+#space{
+  color: white;
+  margin-left: 20px;
+}
+
+.more_button{
+  height: 30px;
+  width: 100px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.more_button:hover{
+  cursor: pointer;
+  background-color: black;
+  color: white;
+}
