@@ -11,6 +11,18 @@ function CryptoInfo({id, icon_url, name, price, volume1hrs, volume1day, volume1m
     cryptoinfo_div.style.display = "none";
   }
 
+  let data_start = new Date (coinData.data_start);
+  let data_end = new Date (coinData.data_end);
+
+  let data_orderbook_start = new Date (coinData.data_orderbook_start);
+  let data_orderbook_end = new Date (coinData.data_orderbook_end);
+
+  let data_quote_start = new Date (coinData.data_quote_start);
+  let data_quote_end = new Date (coinData.data_quote_end);
+
+  let data_trade_start = new Date (coinData.data_trade_start);
+  let data_trade_end = new Date (coinData.data_trade_end);
+
   return (
     <div className="cryptoinfo" id={id_info} >
       <div className="cryptoinfo_section">
@@ -45,21 +57,63 @@ function CryptoInfo({id, icon_url, name, price, volume1hrs, volume1day, volume1m
           </div>
 
           <div className="cryptoinfo_data_other">
+
             <div className="cryptoinfo_data_other_date">
-              <h4>Date</h4>
-              <span>
-                <h4>Start</h4>
-                <p>{coinData.data_start}</p>
-              </span>
-              <span>
-                <h4>End</h4>
-                <p>{coinData.data_end}</p>
-              </span>
+              <h3>Date</h3>
+              <div>
+                <span>
+                  <h4>Start</h4>
+                  <p>{data_start.toLocaleDateString("en-GB")}</p>
+                </span>
+                <span>
+                  <h4>End</h4>
+                  <p>{data_end.toLocaleDateString("en-GB")}</p>
+                </span>
+              </div>
             </div>
 
-            <div className=""></div>
-            <div className=""></div>
-            <div className=""></div>
+            <div className="cryptoinfo_data_other_date">
+              <h3>Order</h3>
+              <div>
+                <span>
+                  <h4>First</h4>
+                  <p>{data_orderbook_start.toLocaleDateString("en-GB")}</p>
+                </span>
+                <span>
+                  <h4>Last</h4>
+                  <p>{data_orderbook_end.toLocaleDateString("en-GB")}</p>
+                </span>
+              </div>
+            </div>
+
+            <div className="cryptoinfo_data_other_date">
+              <h3>Quote</h3>
+              <div>
+                <span>
+                  <h4>First</h4>
+                  <p>{data_quote_start.toLocaleDateString("en-GB")}</p>
+                </span>
+                <span>
+                  <h4>Last</h4>
+                  <p>{data_quote_end.toLocaleDateString("en-GB")}</p>
+                </span>
+              </div>
+            </div>
+
+            <div className="cryptoinfo_data_other_date">
+              <h3>Trade</h3>
+              <div>
+                <span>
+                  <h4>First</h4>
+                  <p>{data_trade_start.toLocaleDateString("en-GB")}</p>
+                </span>
+                <span>
+                  <h4>Last</h4>
+                  <p>{data_trade_end.toLocaleDateString("en-GB")}</p>
+                </span>
+              </div>
+            </div>
+
           </div>
 
         </div>

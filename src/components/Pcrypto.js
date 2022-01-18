@@ -4,7 +4,9 @@ import './Pcrypto.css';
 import {Context} from "../App";
 import React, { useContext } from 'react';
 
-function Pcrypto({id, name, price, volume1day, volume1mth, coinData}) {
+import CryptoInfo from "./CryptoInfo";
+
+function Pcrypto({id, name, price, volume1hrs, volume1day, volume1mth, coinData}) {
 
   const {preferedListState, apiIconDataState} = useContext(Context);
   const [preferedList, setPreferedList] = preferedListState;
@@ -55,27 +57,46 @@ function Pcrypto({id, name, price, volume1day, volume1mth, coinData}) {
 
    }
 
-  let volume1day_int = parseInt(volume1day);
-  let volume1day_final = MoneyFormat(volume1day_int);
+   let volume1hrs_int = parseInt(volume1hrs);
+   let volume1day_int = parseInt(volume1day);
+   let volume1mth_int = parseInt(volume1mth);
 
-  let volume1mth_int = parseInt(volume1mth);
-  let volume1mth_final = MoneyFormat(volume1mth_int);
+   let volume1hrs_final = MoneyFormat(volume1hrs_int);
+   let volume1day_final = MoneyFormat(volume1day_int);
+   let volume1mth_final = MoneyFormat(volume1mth_int);
+
+
+  let id_info = id + "_info";
+  function OpenCryptoInfo(){ // al click sulla cripto si apre la sezione informazioni
+    let cryptoinfo_div = document.getElementById(id_info);
+    cryptoinfo_div.style.display = "flex";
+  }
 
 
   return (
     <div className="pcrypto">
-      <div className="pcrypto_name">
+      <div className="pcrypto_name" onClick={OpenCryptoInfo}>
         <img className="pcrypto_icon" src={url}/>
         <p className="pcrypto_name_name">{name} </p>
         <p className="pcrypto_id">{id} </p>
       </div>
 
-      <div className="pcrypto_data">
+      <div className="pcrypto_data" onClick={OpenCryptoInfo}>
         <p>$ {volume1day_final}</p>
         <p>$ {volume1mth_final}</p>
         {price === "undefined" ? <p>Not Available</p> : <p>$ {parseFloat(price).toLocaleString(undefined, {maximumFractionDigits: 2})}</p>}
       </div>
       <i className="fas fa-heart" id="pcrypto_heart_icon" onClick={removePrefered}></i>
+      <CryptoInfo
+        id={id}
+        icon_url={url}
+        name={name}
+        price={price}
+        volume1hrs={volume1hrs_final}
+        volume1day={volume1day_final}
+        volume1mth={volume1mth_final}
+        coinData={coinData}
+      />
     </div>
   );
 }

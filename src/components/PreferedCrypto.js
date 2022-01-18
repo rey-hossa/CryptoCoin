@@ -50,6 +50,7 @@ function PreferedCrypto() {
               id={coin === undefined ? "" : `${coin.asset_id}`}
               name={coin === undefined ? "" : `${coin.name}`}
               price={coin === undefined ? "" : `${coin.price_usd}`}
+              volume1hrs={coin === undefined ? "" : `${coin.volume_1hrs_usd}`}
               volume1day={coin === undefined ? "" : `${coin.volume_1day_usd}`}
               volume1mth={coin === undefined ? "" : `${coin.volume_1mth_usd}`}
               coinData={coin}
