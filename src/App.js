@@ -51,10 +51,19 @@ function App() {
         });
         resJson = await response.json(); //extract JSON from the response
       }else if (process.env.NODE_ENV == "production"){
-        console.log("sono entrato");
-        let data = await axios.get("/.netlify/functions/lambda");
-        console.log(data);
-        resJson = await data.data;
+        //console.log("sono entrato");
+        //let data = await axios.get("/.netlify/functions/lambda");
+        //console.log(data);
+        //resJson = await data.data;
+
+        let apiKey = "61114BD0-03E1-4B3D-8672-08970E4A0F0C";
+        let uri = "https://rest.coinapi.io/v1/assets";
+
+        const response = await fetch(uri, {
+          method: 'GET',
+          headers: {'X-CoinAPI-Key': apiKey}
+        });
+        resJson = await response.json();
       }
 
 
