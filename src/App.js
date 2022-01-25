@@ -40,7 +40,7 @@ function App() {
   const apiRequest = async () => {
 
       let resJson;
-      console.log(process.env.REACT_APP_API_KEY);
+      console.log(process.env.REACT_API_KEY);
 
       if (process.env.NODE_ENV == "development"){
         let apiKey = process.env.REACT_APP_API_KEY;
