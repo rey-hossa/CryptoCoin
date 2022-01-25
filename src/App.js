@@ -51,7 +51,8 @@ function App() {
         });
         resJson = await response.json(); //extract JSON from the response
       }else{
-        data = await axios.get("/.netlify/functions/lambda");
+        let data = await axios.get("/.netlify/functions/lambda");
+        console.log(data);
         resJson = await data.data;
       }
 
