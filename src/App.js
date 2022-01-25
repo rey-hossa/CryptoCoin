@@ -52,7 +52,7 @@ function App() {
         resJson = await response.json(); //extract JSON from the response
       }else if (process.env.NODE_ENV == "production"){
         console.log("sono entrato");
-        let data = await axios.get("/.netlify/functions/lambda");
+        let data = await axios.get("./netlify/functions/lambda");
         console.log(data);
         resJson = await data.data;
       }
