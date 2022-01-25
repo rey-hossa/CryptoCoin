@@ -5,6 +5,7 @@ exports.handler = async function (event, context) {
   const API_KEY =  process.env.REACT_API_KEY;
 
   let uri = "https://rest.coinapi.io/v1/assets";
+  console.log("lambda");
 
   const response = await fetch(uri, {
     method: 'GET',
