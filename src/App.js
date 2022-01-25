@@ -40,6 +40,7 @@ function App() {
   const apiRequest = async () => {
 
       let resJson;
+      console.log(process.env.NODE_ENV);
 
       if (process.env.NODE_ENV == "development"){
         let apiKey = process.env.REACT_APP_API_KEY;
@@ -52,7 +53,7 @@ function App() {
         resJson = await response.json(); //extract JSON from the response
       }else if (process.env.NODE_ENV == "production"){
         console.log("sono entrato");
-        let data = await axios.get("./netlify/functions/lambda");
+        let data = await axios.get("/.netlify/functions/lambda");
         console.log(data);
         resJson = await data.data;
       }
