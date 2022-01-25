@@ -1,19 +1,20 @@
-/*const axios = require('axios');
+const axios = require('axios');
 
 exports.handler = async function (event, context) {
 
   const API_KEY =  process.env.REACT_API_KEY;
-  const bookName = event.queryStringParameters.bookName;
-  console.log("ciuppaaa");
-  console.log(API_KEY);
 
-  let uri = "https://www.googleapis.com/books/v1/volumes?q=" + bookName + "&key=" + API_KEY +"&maxResults=40";
+  let uri = "https://rest.coinapi.io/v1/assets";
 
-  const { data } = await axios.get(uri);
+  const response = await fetch(uri, {
+    method: 'GET',
+    headers: {'X-CoinAPI-Key': API_KEY}
+  });
+  const resJson = await response.json();
 
   return {
     statusCode: 200,
-    body: JSON.stringify(data)
+    body: JSON.stringify(resJson)
   }
 
-}*/
+}

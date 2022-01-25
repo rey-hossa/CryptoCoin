@@ -39,14 +39,22 @@ function App() {
 
   const apiRequest = async () => {
 
-      let apiKey = process.env.REACT_APP_API_KEY;
-      let uri = "https://rest.coinapi.io/v1/assets";
+      let resJson;
 
-      const response = await fetch(uri, {
-        method: 'GET',
-        headers: {'X-CoinAPI-Key': apiKey}
-      });
-      const resJson = await response.json(); //extract JSON from the response
+      if (process.env.NODE_ENV == "development"){
+        let apiKey = process.env.REACT_APP_API_KEY;
+        let uri = "https://rest.coinapi.io/v1/assets";
+
+        const response = await fetch(uri, {
+          method: 'GET',
+          headers: {'X-CoinAPI-Key': apiKey}
+        });
+        resJson = await response.json(); //extract JSON from the response
+      }else{
+        data = await axios.get("/.netlify/functions/lambda");
+        resJson = await data.data;
+      }
+
 
       let onlyCryptoArray = [];
       resJson.map(coin =>(
@@ -54,8 +62,6 @@ function App() {
       ))
 
       setApiData(onlyCryptoArray);
-
-      let rawData = await axios.get("./netlify/functions/lambda");
   }
 
   const apiIconRequest = async () => {
