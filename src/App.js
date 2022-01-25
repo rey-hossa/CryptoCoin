@@ -50,7 +50,7 @@ function App() {
           headers: {'X-CoinAPI-Key': apiKey}
         });
         resJson = await response.json(); //extract JSON from the response
-      }else{
+      }else if (process.env.NODE_ENV == "production"){
         let data = await axios.get("/.netlify/functions/lambda");
         console.log(data);
         resJson = await data.data;
