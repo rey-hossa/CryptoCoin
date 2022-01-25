@@ -41,11 +41,17 @@
   background-color: white;
   border: none;
   border-radius: 3px;
+
+  border: 2px solid #0084ff;
+  background-color: #0084ff;
+  color: white;
 }
 
 .back_button:hover{
   cursor: pointer;
-  color: gray;
+
+  background-color: white;
+  color: #0084ff;
 }
 
 .cryptoinfo_data{
@@ -164,6 +170,7 @@
 
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   border-radius: 3px;
+  background-color:rgba(204, 211, 222, 0.1);
 }
 
 .cryptoinfo_data_other_date:hover{

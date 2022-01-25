@@ -2,6 +2,7 @@
 import './App.css';
 import {BrowserRouter as Router, Routes as Switch, Route} from "react-router-dom";
 import React, {useState, useEffect} from 'react';
+import axios from 'axios';
 
 import Home from "./components/Home";
 import Allcrypto from "./components/Allcrypto";
@@ -37,12 +38,13 @@ function App() {
   }
 
   const apiRequest = async () => {
-      //let apiKey = "61114BD0-03E1-4B3D-8672-08970E4A0F0C";
+
+      let apiKey = process.env.REACT_APP_API_KEY;
       let uri = "https://rest.coinapi.io/v1/assets";
 
       const response = await fetch(uri, {
         method: 'GET',
-        headers: {'X-CoinAPI-Key': '9B2D9669-81AA-4EEB-942E-AD0EC433CAA7'}
+        headers: {'X-CoinAPI-Key': apiKey}
       });
       const resJson = await response.json(); //extract JSON from the response
 
@@ -52,11 +54,8 @@ function App() {
       ))
 
       setApiData(onlyCryptoArray);
-      console.log(onlyCryptoArray);
 
-      let date2 = onlyCryptoArray[0].data_orderbook_end.slice(0, -18);
-      let date = new Date(onlyCryptoArray[0].data_orderbook_end);
-      console.log(date.toLocaleDateString("en-GB"));
+      let rawData = await axios.get("./netlify/functions/lambda");
   }
 
   const apiIconRequest = async () => {
