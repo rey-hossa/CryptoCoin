@@ -30,8 +30,8 @@ function Allcrypto() {
       <div className="description">
         <p className="description_name">Name</p>
         <div className="description_data">
-          <p>Volume 1 Day</p>
-          <p>Volume 1 Month</p>
+          <p className="desc_volume1day">Volume 1 Day</p>
+          <p className="desc_volume1mth">Volume 1 Month</p>
           <p>Price</p>
         </div>
         <i className="fas fa-heart" id="space"></i>

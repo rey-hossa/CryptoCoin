@@ -82,8 +82,8 @@ function Pcrypto({id, name, price, volume1hrs, volume1day, volume1mth, coinData}
       </div>
 
       <div className="pcrypto_data" onClick={OpenCryptoInfo}>
-        <p>$ {volume1day_final}</p>
-        <p>$ {volume1mth_final}</p>
+        <p className="pcrypto_volume1day">$ {volume1day_final}</p>
+        <p className="pcrypto_volume1mth">$ {volume1mth_final}</p>
         {price === "undefined" ? <p>Not Available</p> : <p>$ {parseFloat(price).toLocaleString(undefined, {maximumFractionDigits: 2})}</p>}
       </div>
       <i className="fas fa-heart" id="pcrypto_heart_icon" onClick={removePrefered}></i>

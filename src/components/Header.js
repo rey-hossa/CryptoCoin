@@ -12,7 +12,6 @@ function Header() {
         <h4 class="logo"> CryptoCoin </h4>
         <Search/>
       </div>
-       {/*<hr/>*/}
 
     </div>
   );

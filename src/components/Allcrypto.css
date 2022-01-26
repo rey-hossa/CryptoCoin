@@ -69,3 +69,54 @@
   background-color: white;
   color: #0084ff;
 }
+
+
+@media only screen and (max-width: 800px) {
+
+  .allcrypto{
+    width: 90%;
+  }
+
+  .description_name{
+    width: 40%;
+  }
+
+  .description_data{
+    width: 60%;
+  }
+  .desc_volume1day{
+    display: none;
+  }
+  .description_data p{
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+
+  .allcrypto{
+    width: 95%;
+  }
+
+  .description_name{
+    width: 60%;
+  }
+
+  .description_data{
+    width: 40%;
+  }
+  .desc_volume1mth{
+    display: none;
+  }
+  .description_data p{
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+
+  .allcrypto_container{
+    padding: 20px;
+  }
+
+}

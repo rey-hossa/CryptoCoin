@@ -68,3 +68,57 @@
   cursor: pointer;
   color: gray;
 }
+
+
+@media only screen and (max-width: 800px) {
+
+  .crypto_name{
+    width: 40%;
+  }
+  .crypto_data{
+    width: 60%;
+  }
+  .volume1day{
+    display: none;
+  }
+  .crypto_data p{
+    width: 50%;
+  }
+  #heart_icon{
+    margin-left: 10px;
+  }
+
+}
+
+@media only screen and (max-width: 650px) {
+
+  .crypto_name{
+    width: 60%;
+  }
+  .crypto_data{
+    width: 40%;
+  }
+  .volume1mth{
+    display: none;
+  }
+  .crypto_data p{
+    width: 100%;
+  }
+  #heart_icon{
+    margin-left: 0px;
+  }
+
+}
+
+@media only screen and (max-width: 500px) {
+
+  .crypto{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .name{
+    margin-right: 5%;
+  }
+
+}

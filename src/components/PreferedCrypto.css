@@ -50,3 +50,52 @@
   color: white;
   margin-left: 20px;
 }
+
+@media only screen and (max-width: 800px) {
+
+  .preferedcrypto{
+    width: 90%;
+  }
+
+  .preferedcrypto_description_name{
+    width: 40%;
+  }
+
+  .preferedcrypto_description_data{
+    width: 60%;
+  }
+  .preferedcrypto_desc_volume1day{
+    display: none;
+  }
+  .preferedcrypto_description_data p{
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+
+  .preferedcrypto{
+    width: 95%;
+  }
+
+  .preferedcrypto_description_name{
+    width: 60%;
+  }
+
+  .preferedcrypto_description_data{
+    width: 40%;
+  }
+  .preferedcrypto_desc_volume1mth{
+    display: none;
+  }
+  .preferedcrypto_description_data p{
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+
+  .preferedcrypto_container{
+    padding: 20px;
+  }
+}

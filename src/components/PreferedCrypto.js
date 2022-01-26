@@ -36,8 +36,8 @@ function PreferedCrypto() {
       <div className="preferedcrypto_description">
         <p className="preferedcrypto_description_name">Name</p>
         <div className="preferedcrypto_description_data">
-          <p>Volume 1 Day</p>
-          <p>Volume 1 Month</p>
+          <p className="preferedcrypto_desc_volume1day">Volume 1 Day</p>
+          <p className="preferedcrypto_desc_volume1mth">Volume 1 Month</p>
           <p>Price</p>
         </div>
         <i className="fas fa-heart" id="space"></i>
