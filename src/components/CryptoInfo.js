@@ -42,15 +42,15 @@ function CryptoInfo({id, icon_url, name, price, volume1hrs, volume1day, volume1m
               {price === "undefined" ? <p>Not Available</p> : <p>$ {parseFloat(price).toLocaleString(undefined, {maximumFractionDigits: 4})}</p>}
               <img id="grafic" src={graphic}/>
             </div>
-            <div className="cryptoinfo_data_volume">
+            <div className="cryptoinfo_data_volume cryptoinfo_volume1hrs">
               <h4>Volume 1 Hours</h4>
               <p>$ {volume1hrs}</p>
             </div>
-            <div className="cryptoinfo_data_volume">
+            <div className="cryptoinfo_data_volume cryptoinfo_volume1day">
               <h4>Volume 1 Day</h4>
               <p>$ {volume1day}</p>
             </div>
-            <div className="cryptoinfo_data_volume">
+            <div className="cryptoinfo_data_volume cryptoinfo_volume1mth">
               <h4>Volume 1 Month</h4>
               <p>$ {volume1mth}</p>
             </div>

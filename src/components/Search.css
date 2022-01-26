@@ -40,3 +40,15 @@
   color: #9aa0a6;
   cursor: pointer;
 }
+
+@media only screen and (max-width: 950px) {
+  .search{
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .search{
+    width: 55%;
+  }
+}

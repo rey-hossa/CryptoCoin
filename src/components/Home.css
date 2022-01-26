@@ -43,5 +43,54 @@
     width: 55%;
   }
 
+}
+
+@media only screen and (max-width: 950px) {
+  .written{
+    width: 65%;
+  }
+
+}
+
+@media only screen and (max-width: 800px) {
+
+  .image_space{
+    width: 90%;
+  }
+
+}
+
+@media only screen and (max-width: 710px) {
+  .written{
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+
+  .image_space{
+    width: 95%;
+  }
+  .image_space h2{
+    font-size: 40px;
+  }
+  .image_space p{
+    font-size: 20px;
+  }
+
+}
+
+@media only screen and (max-width: 500px) {
+
+  .written{
+    width: 80%;
+  }
+
+  .image_space h2{
+    font-size: 35px;
+  }
+  .image_space p{
+    font-size: 18px;
+  }
 
 }

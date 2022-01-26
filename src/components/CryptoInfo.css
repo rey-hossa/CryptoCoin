@@ -69,6 +69,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+
 }
 
 
@@ -177,6 +178,10 @@
   box-shadow: none;
 }
 
+.cryptoinfo_data_other_date h3{
+  font-weight: 500;
+}
+
 .cryptoinfo_data_other_date div{
   width: 100%;
   display: flex;
@@ -190,10 +195,6 @@
   margin-top: 10px;
   margin-left: 30px;
   margin-right: 30px;
-}
-
-.cryptoinfo_data_other_date h3{
-  font-weight: 500;
 }
 
 .cryptoinfo_data_other_date h4{
@@ -210,4 +211,59 @@
   border: none;
   background-color: lightgray;
   margin-top: 20px;
+}
+
+@media only screen and (max-width: 1180px) {
+
+  .cryptoinfo_data_other_date span{
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+}
+
+@media only screen and (max-width: 1080px) {
+
+  .cryptoinfo_data_other_date span{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+}
+
+@media only screen and (max-width: 950px) {
+
+  .cryptoinfo_data_other{
+    display: none;
+  }
+
+  .cryptoinfo_data_prices{
+    width: 100%;
+  }
+
+}
+
+@media only screen and (max-width: 600px) {
+
+  .cryptoinfo_data_price{
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .cryptoinfo_data_name{
+    margin-left: 0px;
+  }
+
+  .cryptoinfo_data_price p{
+    margin-right: 0;
+  }
+
+  .cryptoinfo_data_volume{
+    width: 47%;
+  }
+  .cryptoinfo_volume1hrs{
+    display: none;
+  }
+
 }
