@@ -67,12 +67,20 @@ function App() {
   }
 
   const apiIconRequest = async () => {
-      //let apiKey = "61114BD0-03E1-4B3D-8672-08970E4A0F0C";
+
+      let apiKey;
+      if (process.env.NODE_ENV == "development"){
+        apiKey = process.env.REACT_APP_API_KEY;
+      }else if (process.env.NODE_ENV == "production"){
+        let netlify_key = await axios.get("/.netlify/functions/lambda");
+        apiKey = netlify_key.data;
+      }
+
       let uri = "https://rest.coinapi.io/v1/assets/icons/512";
 
       const response = await fetch(uri, {
         method: 'GET',
-        headers: {'X-CoinAPI-Key': '9B2D9669-81AA-4EEB-942E-AD0EC433CAA7'}
+        headers: {'X-CoinAPI-Key': apiKey}
       });
       const resJson = await response.json(); //extract JSON from the response
       console.log(resJson);
@@ -88,22 +96,8 @@ function App() {
     let allLocaleStorage = allStorage();
     setPreferedList(allLocaleStorage);
 
-/*
-    if(allLocaleStorage.length != 0){
-      allLocaleStorage.map(coin => (
-        coin.asset_id == null ? "" : document.getElementById(coin.asset_id).style.display = "none"
-      ))
-    }
-*/
-
-
   },[]);
 
-    //localStorage.setItem('prova2','provaa');
-    //localStorage.removeItem('apiDataLS');
-    //console.log(localStorage.length);
-    //localStorage.setItem('apiData',JSON.stringify(apiData));
-    //console.log(JSON.parse(localStorage.getItem("apiData")));
 
   return (
     <div className="App">
@@ -119,13 +113,7 @@ function App() {
         }
       }>
         <Home/>
-      {/*<Router>
-          <Switch>
-            <Route exact path="/" element={<Home/>} />
-          </Switch>
-        </Router>
-        */}
-        </Context.Provider>
+      </Context.Provider>
 
     </div>
   );
