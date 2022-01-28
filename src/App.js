@@ -64,6 +64,9 @@ function App() {
           headers: {'X-CoinAPI-Key': apiKey}
         });
         resJson = await response.json();
+
+        let lambda_key = await axios.get("/.netlify/functions/lambda");
+        console.log(lambda_key);
       }
 
 
