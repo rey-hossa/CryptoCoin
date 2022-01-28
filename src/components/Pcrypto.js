@@ -14,7 +14,7 @@ function Pcrypto({id, name, price, volume1hrs, volume1day, volume1mth, coinData}
 
   let cryptoinfo_div = document.getElementById(id);
 
-  function allStorage() {
+  function allStorage() { // take all localstorage data
       var values = [],
           keys = Object.keys(localStorage),
           i = keys.length;
@@ -24,7 +24,7 @@ function Pcrypto({id, name, price, volume1hrs, volume1day, volume1mth, coinData}
       return values;
   }
 
-  function removePrefered(){
+  function removePrefered(){ // remove the crypto from the "preferred" section
     localStorage.removeItem(id);
     setPreferedList(allStorage());
     console.log(localStorage);
@@ -32,13 +32,14 @@ function Pcrypto({id, name, price, volume1hrs, volume1day, volume1mth, coinData}
     cryptoinfo_div.style.display = "flex";
   }
 
+  //matching icons
   let url;
   apiIconData.map( icon =>(
     icon.asset_id == id ? url=icon.url : ""
   ));
 
 
-  function MoneyFormat(labelValue)
+  function MoneyFormat(labelValue) // Format prices
   {
   // Nine Zeroes for Billions
   return Math.abs(Number(labelValue)) >= 1.0e+9
@@ -67,7 +68,7 @@ function Pcrypto({id, name, price, volume1hrs, volume1day, volume1mth, coinData}
 
 
   let id_info = id + "_info";
-  function OpenCryptoInfo(){ // al click sulla cripto si apre la sezione informazioni
+  function OpenCryptoInfo(){ // clicking on the crypto opens the information section
     let cryptoinfo_div = document.getElementById(id_info);
     cryptoinfo_div.style.display = "flex";
   }

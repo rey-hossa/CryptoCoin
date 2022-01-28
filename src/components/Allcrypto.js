@@ -13,12 +13,13 @@ function Allcrypto() {
   const [search, setSearch] = searchState;
   const [listElements, setListElements] = listElementsState;
 
+  //to filter when the user enters something in the search bar
   const filteredCoins = apiData.filter(coin =>
     coin.name.toLowerCase().includes(search.toLowerCase())
   );
 
 
-  function handleClick(){
+  function handleClick(){ // increase number of crypto displayed
     setListElements(listElements+20);
   }
 

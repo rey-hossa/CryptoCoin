@@ -19,7 +19,7 @@ function App() {
   const [preferedList, setPreferedList] = useState([]); // list of preferred crypto
   const [renderTrigger, setRenderTrigger] = useState("");
 
-  function allStorage() {
+  function allStorage() { // take all localstorage data
     var values = [],
     keys = Object.keys(localStorage),
     i = keys.length;
@@ -29,7 +29,7 @@ function App() {
     return values;
   }
 
-  const apiRequest = async () => {
+  const apiRequest = async () => { // fetch api data
 
       let apiKey;
 
@@ -64,7 +64,7 @@ function App() {
       }
   }
 
-  const apiIconRequest = async () => {
+  const apiIconRequest = async () => { // fetch crypto icons
 
       let apiKey;
       if (process.env.NODE_ENV == "development"){

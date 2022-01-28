@@ -13,11 +13,12 @@ function PreferedCrypto() {
   const [listElements, setListElements] = listElementsState;
   const [preferedList, setPreferedList] = preferedListState;
 
+  //to filter when the user enters something in the search bar
   const filteredPreferedCoins = preferedList.filter(coin =>
     coin.name.toLowerCase().includes(search.toLowerCase())
   );
 
-// Se non ci sono crypto preferite la sezione scompare
+  // If there are not preferred crypto the section disappears
   let preferedcrypto_div = document.getElementById('preferedcrypto');
 
   if(preferedList.length == 0){

@@ -1,8 +1,8 @@
 
 import './Home.css';
-import {Context} from "../App";
-import React, { useContext } from 'react';
+import React from 'react';
 
+//wallpaper all format
 import image from '../images/final-image.jpg';
 import image1180 from '../images/final-image-1180.jpg';
 import image950 from '../images/final-image-950.jpg';
@@ -15,9 +15,6 @@ import PreferedCrypto from "./PreferedCrypto";
 import Allcrypto from "./Allcrypto";
 
 function Home() {
-
-  const {apiDataState} = useContext(Context);
-  const [apiData, setApiData] = apiDataState;
 
   return (
     <div className="home">

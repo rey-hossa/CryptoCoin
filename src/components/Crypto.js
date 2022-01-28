@@ -15,7 +15,7 @@ function Crypto({id, name, price, volume1hrs, volume1day, volume1mth, coinData})
 
   let cryptoinfo_div = document.getElementById(id);
 
-  function allStorage() {
+  function allStorage() { // take all localstorage data
       var values = [],
           keys = Object.keys(localStorage),
           i = keys.length;
@@ -27,23 +27,22 @@ function Crypto({id, name, price, volume1hrs, volume1day, volume1mth, coinData})
 
   function logData(){
 
-    function addPrefered(){
+    function addPrefered(){ // Add crypto to Preferred
       localStorage.setItem(id,JSON.stringify(coinData));
       setPreferedList(allStorage());
     }
     addPrefered();
-    console.log(localStorage);
 
-    cryptoinfo_div.style.display = "none"; // quando viene cliccata la cripto scompare nell sezione "tutti"
+    cryptoinfo_div.style.display = "none"; // when clicked, the crypto disappears in the "all" section
   }
 
   let id_info = id + "_info";
-  function OpenCryptoInfo(){ // al click sulla cripto si apre la sezione informazioni
+  function OpenCryptoInfo(){ // clicking on the crypto opens the information section
     let cryptoinfo_div = document.getElementById(id_info);
     cryptoinfo_div.style.display = "flex";
   }
 
- //non fa vedere in tutti quelli gia presenti in preferiti (da risolvere)
+  //does not show in the "all" section those already present in "preferred"
   if(cryptoinfo_div != null){
     if(preferedList.length != 0){
       preferedList.map(coin => (
@@ -53,7 +52,7 @@ function Crypto({id, name, price, volume1hrs, volume1day, volume1mth, coinData})
   }
   setRenderTrigger("ok");
 
-  //abbinamento icone
+  //matching icons
   let url;
   apiIconData.map( icon =>(
     icon.asset_id == id ? url=icon.url : ""
@@ -66,7 +65,7 @@ function Crypto({id, name, price, volume1hrs, volume1day, volume1mth, coinData})
   }
 */
 
-  function MoneyFormat(labelValue)
+  function MoneyFormat(labelValue) // Format the prices
   {
   // Nine Zeroes for Billions
   return Math.abs(Number(labelValue)) >= 1.0e+9

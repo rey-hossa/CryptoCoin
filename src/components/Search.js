@@ -6,10 +6,10 @@ import React, { useContext } from 'react';
 
 function Search() {
 
-  const {searchState} = useContext(Context); 
+  const {searchState} = useContext(Context);
   const [search, setSearch] = searchState;
 
-  const handleChange = e => {
+  const handleChange = e => { // set the state variable when the user writes something
     setSearch(e.target.value);
     //console.log(search);
   };
