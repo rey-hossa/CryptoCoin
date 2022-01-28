@@ -52,16 +52,16 @@ function App() {
         });
         let resJson = await response.json(); //extract JSON from the response
 
+        let onlyCryptoArray = [];
+        resJson.map(coin =>(
+          coin.type_is_crypto == 0 ? "" : onlyCryptoArray.push(coin)
+        ))
+
+        setApiData(onlyCryptoArray);
+
       }catch(error){
       console.error(error);
       }
-
-      let onlyCryptoArray = [];
-      resJson.map(coin =>(
-        coin.type_is_crypto == 0 ? "" : onlyCryptoArray.push(coin)
-      ))
-
-      setApiData(onlyCryptoArray);
   }
 
   const apiIconRequest = async () => {
@@ -84,11 +84,11 @@ function App() {
         });
         const resJson = await response.json(); //extract JSON from the response
 
+        setApiIconData(resJson);
+
       }catch(error){
       console.error(error);
       }
-
-      setApiIconData(resJson);
   }
 
   useEffect(() => {
