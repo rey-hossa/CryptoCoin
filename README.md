@@ -26,4 +26,4 @@ The usage is very simple, you can see crypto prices, you can select your favorit
 ## Contact
 Email: rey.hossa.rh@gmail.com
 
-Project link: https://github.com/rey-hossa/Books-Finder.git
+Project link: https://github.com/rey-hossa/CryptoCoin.git
