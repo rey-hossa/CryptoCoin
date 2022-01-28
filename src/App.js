@@ -47,9 +47,7 @@ function App() {
       }else if (process.env.NODE_ENV == "production"){
 
         let netlify_key = await axios.get("/.netlify/functions/lambda");
-        apiKey = lambda_key.data;
-        console.log("lambda_key");
-        console.log(lambda_key.data);
+        apiKey = netlify_key.data;
       }
 
       let uri = "https://rest.coinapi.io/v1/assets";
