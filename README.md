@@ -1,12 +1,12 @@
-# Books Finder Project
+# Cryptocoin Project
 
 ![Alt text](src/images/cryptocoin.png "image")
 
-This project is a books finder application, so with this app you can search every existing book in the world.
+This project is a crypto site, so with this site you can keep track of your favorite cryptocurrencies.
 
 ## Getting Started
 
-To Starting using this Application, go to https://reysbooksfinder.netlify.app on your favourite browser, or if you want to try it locally download the project and rename the ".env.sample" file in ".env" and edit this with your api key (get it from "Google Books APIs").
+To Starting using this Application, go to https://cryptocoinproject.netlify.app on your favourite browser, or if you want to try it locally download the project and rename the ".env.sample" file in ".env" and edit this with your api key (get it from "coinapi.io").
 
 ## Tools Used
 
@@ -16,10 +16,12 @@ React
 
 Netlify
 
+Rest Api
+
 
 ## Usage
 
-The usage is very simple, enter the name or author of the book you want and a list of books related to your search will appear, then by clicking on a book you can see more information about it, you can also read an extract from the book by clicking on the "preview" button.
+The usage is very simple, you can see crypto prices, you can select your favorites, and by clicking on it you can see more information about the crypto.
 
 ## Contact
 Email: rey.hossa.rh@gmail.com
