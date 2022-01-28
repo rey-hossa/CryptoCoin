@@ -66,7 +66,8 @@ function App() {
         resJson = await response.json();
 
         let lambda_key = await axios.get("/.netlify/functions/lambda");
-        console.log(lambda_key);
+        console.log("lambda_key");
+        console.log(lambda_key.data);
       }
 
 
