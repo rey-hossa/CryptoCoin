@@ -9,22 +9,14 @@ import Allcrypto from "./components/Allcrypto";
 
 export const Context = React.createContext();
 
-// rey rh apiKey: 61114BD0-03E1-4B3D-8672-08970E4A0F0C
-// rey 99 apiKey: 9B2D9669-81AA-4EEB-942E-AD0EC433CAA7
-
-// temp apiKey: 982AAB81-ABBE-4A49-8A79-99E3C2D0A769
-// temp apiKey: 73D3F28C-61C6-41B7-B49A-5402A31445AA
-
-// temp apiKey: C82CEC8A-91CA-47E8-B491-5B224995B64D
-
 function App() {
 
   const [apiData, setApiData] = useState([]);
   const [apiIconData, setApiIconData] = useState([]);
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState(''); // User input in the search bar
 
-  const [listElements,setListElements] = useState(20);
-  const [preferedList, setPreferedList] = useState([]);
+  const [listElements,setListElements] = useState(20); // number of crypto displayed
+  const [preferedList, setPreferedList] = useState([]); // list of preferred crypto
   const [renderTrigger, setRenderTrigger] = useState("");
 
   function allStorage() {
@@ -52,11 +44,17 @@ function App() {
 
       let uri = "https://rest.coinapi.io/v1/assets";
 
-      const response = await fetch(uri, {
-        method: 'GET',
-        headers: {'X-CoinAPI-Key': apiKey}
-      });
-      let resJson = await response.json(); //extract JSON from the response
+      try{
+
+        const response = await fetch(uri, {
+          method: 'GET',
+          headers: {'X-CoinAPI-Key': apiKey}
+        });
+        let resJson = await response.json(); //extract JSON from the response
+
+      }catch(error){
+      console.error(error);
+      }
 
       let onlyCryptoArray = [];
       resJson.map(coin =>(
@@ -78,12 +76,17 @@ function App() {
 
       let uri = "https://rest.coinapi.io/v1/assets/icons/512";
 
-      const response = await fetch(uri, {
-        method: 'GET',
-        headers: {'X-CoinAPI-Key': apiKey}
-      });
-      const resJson = await response.json(); //extract JSON from the response
-      console.log(resJson);
+      try{
+
+        const response = await fetch(uri, {
+          method: 'GET',
+          headers: {'X-CoinAPI-Key': apiKey}
+        });
+        const resJson = await response.json(); //extract JSON from the response
+
+      }catch(error){
+      console.error(error);
+      }
 
       setApiIconData(resJson);
   }
